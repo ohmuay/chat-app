@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Chatapp!</h1>
+    <div id="side"></div>
+    <!-- <button id="increment">+1</button> -->
+    <div id="messages"></div>
+    <div id="location-url"></div>
+    <form>
+        <input id="text-messages" type="text">
+        <button id="submit-btn" type="submit">Submit</button>
+    </form>
+    <button id="location">Send location</button>
+
+
+    <script id="message-template" type="text/html">
+        <div>
+            <p>{{username}}</p>
+            <p>{{createdAt}} - {{message}}</p>
+        </div>
+    </script>
+    <script id="location-message-template" type="text/html">
+        <div>
+            <p>{{createdAt}} - <a href="{{url}}" target="_blank">Click to go to google maps</a></p>
+        </div>
+    </script>
+
+    <script id="side-bar" type="text/html">
+        <div>
+            <h2>Room: {{room}}</h2>
+            <h3>Users: </h3>
+            <ul>
+                {{#users}}
+                <li>{{username}}</li>
+                {{/users}}
+            </ul>
+        </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" integrity="sha512-6AXIWogbKpsHvoZJrJtHpIYES4wP8czSj0zk7ZfwOYS8GWYFNSykwdfapt7yQc4ikZytemBu+QyVObzBHJMwYg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js" integrity="sha512-BHtomM5XDcUy7tDNcrcX1Eh0RogdWiMdXl3wJcKB3PFekXb3l5aDzymaTher61u6vEZySnoC/SAj2Y/p918Y3w==" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/chat.js"></script>
+</body>
+</html>
