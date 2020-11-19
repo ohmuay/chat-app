@@ -10,7 +10,7 @@
     <div id="side"></div>
     <!-- <button id="increment">+1</button> -->
     <div id="messages"></div>
-    <div id="location-url"></div>
+    <!-- <div id="location-url"></div> -->
     <form>
         <input id="text-messages" type="text">
         <button id="submit-btn" type="submit">Submit</button>
@@ -26,7 +26,8 @@
     </script>
     <script id="location-message-template" type="text/html">
         <div>
-            <p>{{createdAt}} - <a href="{{url}}" target="_blank">Click to go to google maps</a></p>
+            <p>{{username}}</p>
+            <p>{{createdAt}} - <a href="{{url}}" target="_blank">My location</a></p>
         </div>
     </script>
 

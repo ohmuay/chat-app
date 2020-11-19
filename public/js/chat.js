@@ -44,10 +44,11 @@ socket.on("roomData",({room,users})=>{
 
 socket.on("sendLocationMessage",(location)=>{
   const html = Mustache.render($locationTemplate,{
+    username:location.username,
     url:location.url,
     createdAt:moment(location.createdAt).format('h:mm a')
   })
-  $location.innerHTML = html
+  $messages.insertAdjacentHTML("beforeend",html)
 })
 
 
